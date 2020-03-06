@@ -19,20 +19,20 @@
 //       ' ##### '
 //       '#######'
 
-function pyramid(n) {
-    for(let row=0; row<n; row++){
-        let level = '';
-
-    }
-}
-
-let start = new Date();
-pyramid(1500);
-let time = new Date() - start;
-
-console.log("time needed", time);
-
-module.exports = pyramid;
+// function pyramid(n) {
+//     for(let row=0; row<n; row++){
+//         let level = '';
+//
+//     }
+// }
+//
+// let start = new Date();
+// pyramid(1500);
+// let time = new Date() - start;
+//
+// console.log("time needed", time);
+//
+// module.exports = pyramid;
 
 //my first try
 // function pyramid(n) {
@@ -78,12 +78,14 @@ module.exports = pyramid;
 //
 // }
 
-// function pyramid(n) {
-//     let s = '#';
-//     let spaces = ' '.repeat(n-1);
-//     for(let i=0; i<n; i++){
-//         console.log(spaces+s+spaces);
-//         s+='##';
-//         spaces=spaces.substr(1);
-//     }
-// }
+function pyramid(n) {
+    let s = '#';
+    let spaces = ' '.repeat(n-1);
+    for(let i=0; i<n; i++){
+        console.log(spaces+s+spaces);
+        s+='##';
+        spaces=spaces.substr(1);
+    }
+}
+
+pyramid(5);
