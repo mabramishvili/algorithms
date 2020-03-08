@@ -2,6 +2,21 @@
 let map = {};
 
 function nimGame(pile) {
+
+    let counts = {}, included = {}, newPile = [];
+    for(let val of pile){
+        counts[val] = counts[val] + 1 || 1;
+    }
+
+    for(let el of pile){
+        if(counts[el] % 2 === 1 && !included[el]){
+            newPile.push(el);
+            included[el] = true;
+        }
+    }
+
+    pile = newPile;
+
     for (let i=0; i<pile.length; i++) {
         for(let j=1; j<=pile[i]; j++){
             let arr = [...pile], moves1 = [`${i},${j}`];
@@ -51,6 +66,6 @@ let traverse = (left, moves1, moves2, toMove) => {
 
 };
 
-let pile = [3, 2, 4];
+let pile = [3, 2, 4, 4, 4];
 
 console.log(nimGame(pile));
